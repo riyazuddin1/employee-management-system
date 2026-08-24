@@ -17,7 +17,7 @@ const NavbarComp = () => {
       <div className="navbar-container">
 
         <Link
-          to={isAuthenticated ? "/" : "/home"}
+          to="/"
           className="navbar-brand"
         >
           Employee<span>Hub</span>
@@ -27,7 +27,7 @@ const NavbarComp = () => {
 
           {!isAuthenticated ? (
             <>
-              <Link to="/home" className="nav-link">
+              <Link to="/" className="nav-link">
                 Home
               </Link>
 
@@ -42,6 +42,10 @@ const NavbarComp = () => {
           ) : (
             <>
               <Link to="/" className="nav-link">
+                Home
+              </Link>
+
+              <Link to="/viewEmp" className="nav-link">
                 Dashboard
               </Link>
 

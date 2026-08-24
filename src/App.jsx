@@ -21,16 +21,23 @@ const App = () => {
         <NavbarComp />
 
         <Routes>
+          <Route path="/" element={<Home />} />
+
+          <Route path="/home" element={<Home />} />
+
           <Route path="/register" element={<Registration />} />
+
           <Route path="/login" element={<Login />} />
+
           <Route
-            path="/"
+            path="/viewEmp"
             element={
               <ProtectedRoutes>
                 <ViewEmployee />
               </ProtectedRoutes>
             }
           />
+
           <Route
             path="/addEmp"
             element={
@@ -39,6 +46,7 @@ const App = () => {
               </ProtectedRoutes>
             }
           />
+
           <Route
             path="/updateEmp/:eid"
             element={
@@ -47,6 +55,7 @@ const App = () => {
               </ProtectedRoutes>
             }
           />
+
           <Route
             path="/viewEmp/:vid"
             element={
@@ -55,6 +64,7 @@ const App = () => {
               </ProtectedRoutes>
             }
           />
+
           <Route
             path="/profile"
             element={
@@ -63,8 +73,6 @@ const App = () => {
               </ProtectedRoutes>
             }
           />
-
-          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
