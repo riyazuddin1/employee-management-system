@@ -44,7 +44,7 @@ const AddEmployee = () => {
       setLoading(true);
 
       await axiosInstance.post(
-        "http://localhost:8085/addEmployee",
+        "https://employee-management-backend-o65d.onrender.com/addEmployee",
         {
           id: Number(formData.id),
           name: formData.name.trim(),

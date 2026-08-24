@@ -16,7 +16,7 @@ const ViewIndividualEmp = () => {
         setLoading(true);
 
         const response = await axiosInstance.get(
-          `http://localhost:8085/getEmpById/${vid}`
+          `https://employee-management-backend-o65d.onrender.com/getEmpById/${vid}`
         );
 
         setEmployee(response.data);

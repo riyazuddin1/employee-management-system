@@ -13,7 +13,7 @@ const ViewEmployee = () => {
     try {
       setLoading(true);
       const response = await axiosInstance.get(
-        "http://localhost:8085/getEmployees"
+        "https://employee-management-backend-o65d.onrender.com/getEmployees"
       );
       setEmployee(response.data);
     } catch (error) {
@@ -36,7 +36,7 @@ const ViewEmployee = () => {
 
     try {
       await axiosInstance.delete(
-        "http://localhost:8085/deleteEmp/" + id
+        "https://employee-management-backend-o65d.onrender.com/deleteEmp/" + id
       );
 
       toast.success("Employee deleted successfully");

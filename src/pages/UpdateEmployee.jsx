@@ -23,7 +23,7 @@ const UpdateEmployee = () => {
         setLoading(true);
 
         const response = await axiosInstance.get(
-          `http://localhost:8085/getEmpById/${eid}`
+          `https://employee-management-backend-o65d.onrender.com/getEmpById/${eid}`
         );
 
         const data = response.data;
@@ -76,7 +76,7 @@ const UpdateEmployee = () => {
       setSaving(true);
 
       await axiosInstance.put(
-        "http://localhost:8085/updateEmployee",
+        "https://employee-management-backend-o65d.onrender.com/updateEmployee",
         {
           id: Number(formData.id),
           name: formData.name.trim(),

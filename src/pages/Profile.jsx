@@ -25,7 +25,7 @@ const Profile = () => {
 
       const response =
         await axiosInstance.get(
-          `http://localhost:8085/profile/${username}`
+          `https://employee-management-backend-o65d.onrender.com/profile/${username}`
         );
 
       setProfile(response.data);
@@ -88,7 +88,7 @@ const Profile = () => {
 
       const response =
         await axiosInstance.put(
-          `http://localhost:8085/profile/${username}`,
+          `https://employee-management-backend-o65d.onrender.com/profile/${username}`,
           {
             firstName:
               formData.firstName.trim(),

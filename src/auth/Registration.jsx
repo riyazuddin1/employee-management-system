@@ -59,7 +59,7 @@ const Registration = () => {
       setLoading(true);
 
       const response = await axiosInstance.post(
-        "http://localhost:8085/register",
+        "https://employee-management-backend-o65d.onrender.com/register",
         {
           firstName: firstName.trim(),
           lastName: lastName.trim(),

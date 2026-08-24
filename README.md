@@ -529,7 +529,7 @@ cd backend/employee-management-system
 ### Backend URL
 
 ```text
-http://localhost:8085
+https://employee-management-backend-o65d.onrender.com
 ```
 
 ---
