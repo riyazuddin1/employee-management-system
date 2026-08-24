@@ -1,23 +1,196 @@
-.navComp
-{
-    width: 100%;
-    height: 80px;
-    border-bottom: 1.2px solid #ccc;
+/* =========================================================
+   EMPLOYEEHUB NAVBAR
+   ========================================================= */
+
+.navbar {
+  width: 100%;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #e5e7eb;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
 
-.navComp > article{
-    width: 90%;
-    height: inherit;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  min-height: 72px;
+
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.menuLinks a{
-    margin-left: 30px;
-    font-size: 18px;
-    color: crimson;
-    text-decoration: none;
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+
+  text-decoration: none;
+
+  color: #111827;
+
+  font-size: 22px;
+  font-weight: 850;
+  letter-spacing: -0.7px;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navbar-brand span {
+  color: #4f46e5;
+}
+
+.navbar-brand:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 9px 12px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  color: #4b5563;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #4f46e5;
+  background: #f5f3ff;
+}
+
+.nav-register {
+  color: #4f46e5;
+}
+
+.nav-register:hover {
+  background: #eef2ff;
+}
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.logout-btn {
+  margin-left: 5px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+
+  padding: 9px 16px;
+
+  background: #111827;
+  color: white;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #1f2937;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .navbar-container {
+    min-height: 66px;
+    padding: 0 16px;
+  }
+
+  .navbar-brand {
+    font-size: 19px;
+  }
+
+  .navbar-links {
+    gap: 2px;
+  }
+
+  .nav-link {
+    padding: 8px 8px;
+    font-size: 12px;
+  }
+
+  .logout-btn {
+    margin-left: 3px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .navbar-container {
+    align-items: flex-start;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .navbar-brand {
+    padding-top: 5px;
+  }
 }

@@ -1,27 +1,65 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, {
+  createContext,
+  useContext,
+  useState,
+} from "react";
+
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
 
-export const AuthProvider = ({children}) =>{
+export const AuthProvider = ({ children }) => {
 
-    const[isAuthenticated , setIsAuthenticated]= useState(()=>{
-        return localStorage.getItem('isAuthenticated') === 'true'
-    });
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    () =>
+      localStorage.getItem("isAuthenticated") === "true"
+  );
 
-    const login = () => {
-        setIsAuthenticated(true);
-        localStorage.setItem('isAuthenticated' , true);
-    };
+  const [username, setUsername] = useState(
+    () =>
+      localStorage.getItem("username") || ""
+  );
 
-    const logout = () => {
-        setIsAuthenticated(false);
-        localStorage.removeItem('isAuthenticated');
-    }
+  const login = (loggedInUsername) => {
 
-    return (
-        <AuthContext.Provider value={{isAuthenticated , login , logout}}>
-            {children}
-        </AuthContext.Provider>
-    )
-}
+    setIsAuthenticated(true);
+    setUsername(loggedInUsername);
+
+    localStorage.setItem(
+      "isAuthenticated",
+      "true"
+    );
+
+    localStorage.setItem(
+      "username",
+      loggedInUsername
+    );
+  };
+
+  const logout = () => {
+
+    setIsAuthenticated(false);
+    setUsername("");
+
+    localStorage.removeItem(
+      "isAuthenticated"
+    );
+
+    localStorage.removeItem(
+      "username"
+    );
+  };
+
+  return (
+    <AuthContext.Provider
+      value={{
+        isAuthenticated,
+        username,
+        login,
+        logout,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};

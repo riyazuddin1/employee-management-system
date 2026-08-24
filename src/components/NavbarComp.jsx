@@ -1,33 +1,72 @@
-import React from 'react'
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../service/AuthContext";
 import "./navbar.css";
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../service/AuthContext';
 
 const NavbarComp = () => {
-
+  const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
-  const{logout} = useAuth();
-  const logoutUser=()=>{
-      logout();
-      navigate("/login")
-  }
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
-     <section className='navComp'>
-      <article>
+    <nav className="navbar">
+      <div className="navbar-container">
 
-        <div className="logo">
-          <h2>Employee</h2> 
+        <Link
+          to={isAuthenticated ? "/" : "/home"}
+          className="navbar-brand"
+        >
+          Employee<span>Hub</span>
+        </Link>
+
+        <div className="navbar-links">
+
+          {!isAuthenticated ? (
+            <>
+              <Link to="/home" className="nav-link">
+                Home
+              </Link>
+
+              <Link to="/login" className="nav-link">
+                Login
+              </Link>
+
+              <Link to="/register" className="nav-link nav-register">
+                Register
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="/" className="nav-link">
+                Dashboard
+              </Link>
+
+              <Link to="/addEmp" className="nav-link">
+                Add Employee
+              </Link>
+
+              <Link to="/profile" className="nav-link">
+                Profile
+              </Link>
+
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="logout-btn"
+              >
+                Logout
+              </button>
+            </>
+          )}
+
         </div>
-        <div className="menuLinks">
-          <Link to="/addEmp" >Add Student</Link>
-          <Link to="/register" >Register</Link>
-          <Link to="/login" >Login</Link>
-          <button onClick={logoutUser}>Logout</button>
-        </div>
-      </article>
+      </div>
+    </nav>
+  );
+};
 
-     </section>
-  )
-}
-
-export default NavbarComp
+export default NavbarComp;

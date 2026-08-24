@@ -1,9 +1,3111 @@
-*{
+/* =========================================================
+   EMPLOYEEHUB - GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+* {
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-  font-family: sans-serif;
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --primary-light: #eef2ff;
+
+  --success: #059669;
+  --success-light: #ecfdf5;
+
+  --danger: #dc2626;
+  --danger-light: #fef2f2;
+
+  --warning: #d97706;
+  --warning-light: #fffbeb;
+
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.1);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.dashboard-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 42px 24px 60px;
+}
+
+
+/* Hero */
+
+.dashboard-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 32px;
+}
+
+.dashboard-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.dashboard-hero h1 {
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.dashboard-hero p {
+  max-width: 650px;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  padding: 12px 20px;
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(79, 70, 229, 0.25);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 22px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: var(--primary-light);
+
+  font-size: 21px;
+}
+
+.stat-card span {
+  display: block;
+  margin-bottom: 3px;
+
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stat-card strong {
+  display: block;
+
+  color: var(--text-primary);
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.stat-card .status-active {
+  color: var(--success);
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   EMPLOYEE DIRECTORY
+   ========================================================= */
+
+.employee-section {
+  overflow: hidden;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 24px 26px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.section-heading h2 {
+  margin-bottom: 3px;
+
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.section-heading p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.employee-count {
+  padding: 7px 12px;
+
+  border-radius: 20px;
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.employee-table thead {
+  background: #f8fafc;
+}
+
+.employee-table th {
+  padding: 14px 20px;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text-secondary);
+
+  text-align: left;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.employee-table td {
+  padding: 17px 20px;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  color: #374151;
+  font-size: 14px;
+}
+
+.employee-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.employee-table tbody tr:hover {
+  background: #fafbff;
+}
+
+.employee-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* Employee ID */
+
+.employee-id {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+
+/* Employee name */
+
+.employee-name {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+/* Department */
+
+.department-badge {
+  display: inline-flex;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.action-btn {
+  border: 1px solid var(--border);
+  border-radius: 7px;
+
+  padding: 7px 11px;
+
+  background: white;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.view-btn {
+  color: #374151;
+}
+
+.view-btn:hover {
+  background: #f3f4f6;
+}
+
+.edit-btn {
+  color: var(--primary);
+}
+
+.edit-btn:hover {
+  border-color: #c7d2fe;
+  background: var(--primary-light);
+}
+
+.delete-btn {
+  color: var(--danger);
+}
+
+.delete-btn:hover {
+  border-color: #fecaca;
+  background: var(--danger-light);
+}
+
+
+/* =========================================================
+   EMPTY / LOADING STATE
+   ========================================================= */
+
+.empty-state {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  text-align: center;
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 50%;
+  background: var(--primary-light);
+
+  font-size: 28px;
+}
+
+.empty-state h3 {
+  margin-bottom: 5px;
+
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.empty-state p {
+  margin-bottom: 20px;
+
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.loader {
+  width: 34px;
+  height: 34px;
+
+  margin-bottom: 12px;
+
+  border: 3px solid #e5e7eb;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   FORM STYLING
+   These styles also prepare Login, Register,
+   Add Employee and Update Employee pages.
+   ========================================================= */
+
+.form-page {
+  min-height: calc(100vh - 73px);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 50px 20px;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 520px;
+
+  padding: 34px;
+
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.form-card h1 {
+  margin-bottom: 8px;
+
+  color: var(--text-primary);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.form-card > p {
+  margin-bottom: 26px;
+
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  outline: none;
+
+  background: white;
+  color: var(--text-primary);
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.form-submit {
+  width: 100%;
+
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   TOAST NOTIFICATIONS
+   ========================================================= */
+
+.Toastify__toast {
+  border-radius: 10px !important;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    sans-serif !important;
+
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .dashboard-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-hero h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-page {
+    padding: 28px 15px 45px;
+  }
+
+  .dashboard-hero h1 {
+    font-size: 27px;
+  }
+
+  .dashboard-hero p {
+    font-size: 14px;
+  }
+
+  .primary-btn {
+    width: 100%;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .employee-table th,
+  .employee-table td {
+    padding: 13px 14px;
+  }
+
+  .form-card {
+    padding: 24px 18px;
+  }
+}
+
+/* =========================================================
+   AUTHENTICATION PAGES
+   ========================================================= */
+
+.auth-page {
+  min-height: calc(100vh - 73px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px 20px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(79, 70, 229, 0.08),
+      transparent 35%
+    ),
+    var(--background);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+
+  padding: 38px;
+
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 30px;
+}
+
+.auth-logo {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.auth-brand h1 {
+  margin-bottom: 3px;
+
+  color: var(--text-primary);
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.auth-brand p {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-footer {
+  margin-top: 24px;
+
+  color: var(--text-secondary);
+
+  text-align: center;
+  font-size: 13px;
+}
+
+.auth-link {
+  border: none;
+  padding: 0;
+
+  background: transparent;
+  color: var(--primary);
+
+  font-weight: 700;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+
+
+.registration-card {
+  max-width: 600px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .auth-card {
+    padding: 28px 20px;
+  }
+}
+
+.employee-form-card {
+  max-width: 650px;
+}
+
+.form-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.form-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.form-header h1 {
+  margin-bottom: 4px;
+}
+
+.form-header p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 26px;
+}
+
+.secondary-btn {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  padding: 12px 20px;
+
+  background: white;
+  color: #374151;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: background 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background: #f8fafc;
+}
+
+.form-actions .primary-btn {
+  min-width: 140px;
+}
+
+@media (max-width: 600px) {
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   PROFILE PAGE
+   ========================================================= */
+
+.profile-page {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  padding: 50px 24px 70px;
+}
+
+.profile-card {
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  box-shadow: var(--shadow-md);
+
+  overflow: hidden;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 32px;
+}
+
+.profile-avatar {
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.profile-heading {
+  flex: 1;
+}
+
+.profile-heading h1 {
+  margin-bottom: 3px;
+
+  color: var(--text-primary);
+
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.profile-heading p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.profile-edit-btn {
+  white-space: nowrap;
+}
+
+.profile-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 0 32px 24px;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: var(--success-light);
+  color: var(--success);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--success);
+}
+
+.profile-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.profile-details {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 0;
+
+  padding: 10px 32px 28px;
+}
+
+.profile-detail {
+  padding: 20px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.profile-detail:nth-child(odd) {
+  margin-right: 35px;
+}
+
+.profile-detail span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-detail strong {
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.profile-active {
+  color: var(--success) !important;
+}
+
+.profile-edit-form {
+  padding: 30px 32px;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.profile-loading {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-secondary);
+}
+
+@media (max-width: 700px) {
+
+  .profile-page {
+    padding: 30px 15px 50px;
+  }
+
+  .profile-header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding: 25px 20px;
+  }
+
+  .profile-edit-btn {
+    width: 100%;
+  }
+
+  .profile-status {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .profile-details {
+    grid-template-columns: 1fr;
+    padding: 5px 20px 20px;
+  }
+
+  .profile-detail:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .profile-edit-form {
+    padding: 25px 20px;
+  }
+
+  .profile-actions {
+    flex-direction: column-reverse;
+  }
+
+  .profile-actions button {
+    width: 100%;
+  }
+}
+
+.field-help {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* =========================================================
+   UPDATE EMPLOYEE
+   ========================================================= */
+
+.form-loading {
+  min-height: 350px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-secondary);
+}
+
+.edit-form-icon {
+  font-size: 20px;
+}
+
+.form-group input:disabled {
+  background: #f8fafc;
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   EMPLOYEE DETAILS PAGE
+   ========================================================= */
+
+.employee-details-page {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  padding: 40px 24px 70px;
+}
+
+.details-topbar {
+  margin-bottom: 18px;
+}
+
+.back-btn {
+  border: none;
+  padding: 8px 0;
+
+  background: transparent;
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+  color: var(--primary);
+}
+
+.details-card {
+  overflow: hidden;
+
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  box-shadow: var(--shadow-md);
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 32px;
+}
+
+.details-avatar {
+  width: 78px;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.details-title {
+  flex: 1;
+}
+
+.details-title h1 {
+  margin-bottom: 3px;
+
+  color: var(--text-primary);
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.details-title p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.details-edit-btn {
+  white-space: nowrap;
+}
+
+.details-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 0 32px 24px;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: var(--success-light);
+  color: var(--success);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.employee-info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  padding: 10px 32px 30px;
+}
+
+.employee-info-item {
+  padding: 22px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.employee-info-item:nth-child(odd) {
+  margin-right: 35px;
+}
+
+.employee-info-item span:first-child {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.employee-info-item strong {
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.details-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding: 22px 32px;
+
+  background: #f8fafc;
+
+  border-top: 1px solid var(--border);
+}
+
+.details-empty-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 40px auto 15px;
+
+  border-radius: 50%;
+
+  background: var(--danger-light);
+  color: var(--danger);
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.details-card > h2,
+.details-card > p {
+  text-align: center;
+}
+
+.details-card > h2 {
+  margin-bottom: 6px;
+}
+
+.details-card > p {
+  margin-bottom: 25px;
+  color: var(--text-secondary);
+}
+
+.details-card > .primary-btn {
+  display: flex;
+  margin: 0 auto 40px;
+}
+
+.details-loading {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-secondary);
+}
+
+@media (max-width: 700px) {
+
+  .employee-details-page {
+    padding: 28px 15px 50px;
+  }
+
+  .details-header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding: 25px 20px;
+  }
+
+  .details-edit-btn {
+    width: 100%;
+  }
+
+  .details-status {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .employee-info-grid {
+    grid-template-columns: 1fr;
+
+    padding: 5px 20px 20px;
+  }
+
+  .employee-info-item:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .details-footer {
+    flex-direction: column-reverse;
+
+    padding: 20px;
+  }
+
+  .details-footer button {
+    width: 100%;
+  }
+}
+
+
+
+
+
+/* =========================================================
+   PREMIUM VISUAL POLISH
+   Add below the existing CSS — do not replace anything
+   ========================================================= */
+
+/* ---------- Overall background ---------- */
+
+body {
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(79, 70, 229, 0.07),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 100% 10%,
+      rgba(99, 102, 241, 0.05),
+      transparent 25%
+    ),
+    #f8fafc;
+}
+
+/* ---------- Main content atmosphere ---------- */
+
+main {
+  position: relative;
+}
+
+/* ---------- Better cards ---------- */
+
+.form-card,
+.profile-card,
+.details-card {
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.03),
+    0 10px 30px rgba(15, 23, 42, 0.07),
+    0 25px 60px rgba(79, 70, 229, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.form-card:hover,
+.profile-card:hover,
+.details-card:hover {
+  box-shadow:
+    0 2px 4px rgba(15, 23, 42, 0.04),
+    0 16px 38px rgba(15, 23, 42, 0.09),
+    0 30px 70px rgba(79, 70, 229, 0.06);
+}
+
+/* ---------- Premium form inputs ---------- */
+
+.form-group input,
+.auth-form input {
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid #dbe1ea;
+
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.02);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.form-group input:hover,
+.auth-form input:hover {
+  border-color: #c7cdd8;
+}
+
+.form-group input:focus,
+.auth-form input:focus {
+  border-color: #6366f1;
+
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12),
+    0 4px 12px rgba(79, 70, 229, 0.06);
+}
+
+/* ---------- Premium buttons ---------- */
+
+.primary-btn {
+  border: 1px solid rgba(79, 70, 229, 0.15);
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1 0%,
+      #4f46e5 100%
+    );
+
+  box-shadow:
+    0 4px 12px rgba(79, 70, 229, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.03);
+
+  box-shadow:
+    0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+/* ---------- Secondary buttons ---------- */
+
+.secondary-btn {
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.secondary-btn:hover {
+  border-color: #c7d2fe;
+
+  background: #f5f7ff;
+
+  transform: translateY(-1px);
+}
+
+/* ---------- Authentication ---------- */
+
+.auth-page {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(99, 102, 241, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(129, 140, 248, 0.10),
+      transparent 30%
+    ),
+    #f8fafc;
+}
+
+.auth-card {
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 35px rgba(15, 23, 42, 0.08),
+    0 30px 70px rgba(79, 70, 229, 0.08);
+}
+
+.auth-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4f46e5,
+      #6366f1,
+      #818cf8
+    );
+}
+
+/* ---------- Auth logo ---------- */
+
+.auth-logo {
+  box-shadow:
+    0 8px 18px rgba(79, 70, 229, 0.22);
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #4338ca
+    );
+}
+
+/* ---------- Profile avatar ---------- */
+
+.profile-avatar,
+.details-avatar {
+  box-shadow:
+    0 8px 20px rgba(79, 70, 229, 0.14);
+
+  border: 4px solid white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #e0e7ff
+    );
+}
+
+/* ---------- Status ---------- */
+
+.profile-status,
+.details-status {
+  box-shadow:
+    0 2px 8px rgba(22, 163, 74, 0.08);
+}
+
+/* ---------- Form icon ---------- */
+
+.form-icon {
+  box-shadow:
+    0 6px 15px rgba(79, 70, 229, 0.10);
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #e0e7ff
+    );
+}
+
+/* ---------- Employee details ---------- */
+
+.employee-info-item {
+  transition:
+    background 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.employee-info-item:hover {
+  background: #fafbff;
+  padding-left: 8px;
+}
+
+/* ---------- Profile details ---------- */
+
+.profile-detail {
+  transition:
+    background 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.profile-detail:hover {
+  background: #fafbff;
+  padding-left: 8px;
+}
+
+/* ---------- Department badge ---------- */
+
+.department-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 11px;
+
+  border-radius: 7px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 12px !important;
+  font-weight: 700 !important;
+
+  border: 1px solid #e0e7ff;
+}
+
+/* ---------- Back button ---------- */
+
+.back-btn {
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.back-btn:hover {
+  transform: translateX(-3px);
+}
+
+/* ---------- Loading ---------- */
+
+.loader {
+  width: 34px;
+  height: 34px;
+
+  border: 3px solid #e5e7eb;
+  border-top-color: #4f46e5;
+
+  border-radius: 50%;
+
+  animation: employeeHubSpin 0.8s linear infinite;
+}
+
+@keyframes employeeHubSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Toast notifications ---------- */
+
+.Toastify__toast {
+  border-radius: 12px !important;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.12) !important;
+
+  font-family: inherit !important;
+
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.Toastify__toast-body {
+  padding: 4px 0;
+}
+
+/* ---------- Selection ---------- */
+
+::selection {
+  background: #c7d2fe;
+  color: #312e81;
+}
+
+/* ---------- Smooth page feel ---------- */
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Mobile polish ---------- */
+
+@media (max-width: 700px) {
+
+  .form-card,
+  .profile-card,
+  .details-card {
+    box-shadow:
+      0 8px 25px rgba(15, 23, 42, 0.07);
+  }
+
+}
+
+
+/* ============================================================
+   EMPLOYEEHUB — PREMIUM VISUAL EXPERIENCE
+   ADD-ON LAYER — KEEP ALL EXISTING CSS
+   ============================================================ */
+
+
+/* ============================================================
+   1. PREMIUM GLOBAL BACKGROUND
+   ============================================================ */
+
+body {
+  background:
+    radial-gradient(
+      circle at 8% 12%,
+      rgba(99, 102, 241, 0.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 92% 18%,
+      rgba(139, 92, 246, 0.09),
+      transparent 23%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(59, 130, 246, 0.06),
+      transparent 30%
+    ),
+    #f8fafc;
+}
+
+
+/* ============================================================
+   2. NAVBAR — MORE PREMIUM
+   ============================================================ */
+
+.navbar {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 255, 255, 0.91)
+    ) !important;
+
+  box-shadow:
+    0 1px 0 rgba(15, 23, 42, 0.04),
+    0 8px 30px rgba(15, 23, 42, 0.035);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.navbar-brand {
+  position: relative;
+}
+
+.navbar-brand::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4f46e5,
+      #8b5cf6
+    );
+
+  transition: width 0.3s ease;
+}
+
+.navbar-brand:hover::after {
+  width: 100%;
+}
+
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 3px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: #6366f1;
+
+  transform: translateX(-50%);
+
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::before {
+  width: 55%;
+}
+
+
+/* ============================================================
+   3. LOGIN PAGE — HERO FEEL
+   ============================================================ */
+
+.auth-page {
+  position: relative;
+
+  min-height: calc(100vh - 72px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(99, 102, 241, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(129, 140, 248, 0.14),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(79, 70, 229, 0.10),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #f8faff 0%,
+      #f8fafc 50%,
+      #f5f7ff 100%
+    );
+}
+
+
+/* Decorative glowing circles */
+
+.auth-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -170px;
+  left: -160px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(99, 102, 241, 0.13),
+      transparent 68%
+    );
+
+  filter: blur(8px);
+
+  pointer-events: none;
+
+  animation: floatingGlow 7s ease-in-out infinite;
+}
+
+.auth-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -230px;
+  bottom: -250px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(129, 140, 248, 0.14),
+      transparent 68%
+    );
+
+  filter: blur(10px);
+
+  pointer-events: none;
+
+  animation: floatingGlow 9s ease-in-out infinite reverse;
+}
+
+@keyframes floatingGlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 18px, 0);
+  }
+}
+
+
+/* ============================================================
+   4. LOGIN CARD — GLASS / PREMIUM
+   ============================================================ */
+
+.auth-card {
+  position: relative;
+
+  z-index: 2;
+
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.91)
+    ) !important;
+
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.03),
+    0 20px 50px rgba(15, 23, 42, 0.08),
+    0 35px 90px rgba(79, 70, 229, 0.10) !important;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  animation: cardAppear 0.65s ease-out both;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* Top gradient line */
+
+.auth-card::before {
+  height: 5px !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4338ca,
+      #6366f1,
+      #8b5cf6,
+      #6366f1,
+      #4338ca
+    ) !important;
+
+  background-size: 200% 100%;
+
+  animation: gradientFlow 4s linear infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+
+/* ============================================================
+   5. LOGIN LOGO
+   ============================================================ */
+
+.auth-logo {
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #4f46e5 55%,
+      #4338ca
+    ) !important;
+
+  box-shadow:
+    0 8px 20px rgba(79, 70, 229, 0.25),
+    0 0 0 6px rgba(99, 102, 241, 0.07);
+}
+
+.auth-logo::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -7px;
+
+  border-radius: inherit;
+
+  border: 1px solid rgba(99, 102, 241, 0.16);
+
+  animation: logoPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+
+
+/* ============================================================
+   6. INPUTS — PREMIUM INTERACTION
+   ============================================================ */
+
+.auth-form input,
+.form-group input {
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease,
+    background 0.25s ease;
+}
+
+.auth-form input:focus,
+.form-group input:focus {
+  transform: translateY(-1px);
+
+  border-color: #6366f1 !important;
+
+  background: #ffffff !important;
+
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.10),
+    0 8px 20px rgba(79, 70, 229, 0.07) !important;
+}
+
+
+/* ============================================================
+   7. PRIMARY BUTTON — MORE ALIVE
+   ============================================================ */
+
+.primary-btn {
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1 0%,
+      #4f46e5 50%,
+      #4338ca 100%
+    ) !important;
+
+  box-shadow:
+    0 7px 18px rgba(79, 70, 229, 0.22) !important;
+}
+
+.primary-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.22),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.55s ease;
+}
+
+.primary-btn:hover::before {
+  left: 140%;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 26px rgba(79, 70, 229, 0.28) !important;
+}
+
+
+/* ============================================================
+   8. DASHBOARD BACKGROUND
+   ============================================================ */
+
+.dashboard-page {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(99, 102, 241, 0.10),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(139, 92, 246, 0.07),
+      transparent 22%
+    );
+}
+
+
+/* ============================================================
+   9. DASHBOARD HEADER
+   ============================================================ */
+
+.dashboard-header h1 {
+  background:
+    linear-gradient(
+      90deg,
+      #111827,
+      #312e81
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.dashboard-eyebrow {
+  color: #4f46e5 !important;
+
+  letter-spacing: 1.8px;
+
+  text-shadow:
+    0 2px 10px rgba(79, 70, 229, 0.10);
+}
+
+
+/* ============================================================
+   10. STAT CARDS
+   ============================================================ */
+
+.stat-card {
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fafbff
+    ) !important;
+
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.055),
+    0 2px 5px rgba(79, 70, 229, 0.025);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  top: -55px;
+  right: -45px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(99, 102, 241, 0.12),
+      transparent 70%
+    );
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 18px 35px rgba(15, 23, 42, 0.09),
+    0 8px 25px rgba(79, 70, 229, 0.08);
+}
+
+
+/* ============================================================
+   11. STAT ICONS
+   ============================================================ */
+
+.stat-icon {
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #e0e7ff
+    ) !important;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(99, 102, 241, 0.08),
+    0 7px 15px rgba(79, 70, 229, 0.08);
+}
+
+
+/* ============================================================
+   12. EMPLOYEE DIRECTORY CARD
+   ============================================================ */
+
+.employee-directory,
+.directory-card,
+.employee-table-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(250, 251, 255, 0.97)
+    ) !important;
+
+  box-shadow:
+    0 12px 35px rgba(15, 23, 42, 0.06),
+    0 3px 8px rgba(79, 70, 229, 0.025) !important;
+}
+
+
+/* ============================================================
+   13. TABLE — REMOVE "BORING HTML TABLE" FEEL
+   ============================================================ */
+
+table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+
+  overflow: hidden;
+
+  border: none !important;
+
+  background: transparent !important;
+}
+
+thead {
+  background:
+    linear-gradient(
+      90deg,
+      #f8faff,
+      #f5f7ff
+    );
+}
+
+th {
+  border: none !important;
+
+  color: #64748b !important;
+
+  font-size: 11px !important;
+  font-weight: 800 !important;
+
+  letter-spacing: 0.9px;
+
+  text-transform: uppercase;
+}
+
+td {
+  border-left: none !important;
+  border-right: none !important;
+
+  border-bottom: 1px solid #edf0f5 !important;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+tbody tr {
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+tbody tr:hover {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(99, 102, 241, 0.035),
+      rgba(99, 102, 241, 0.01)
+    );
+}
+
+tbody tr:hover td:first-child {
+  color: #4f46e5;
+  font-weight: 800;
+}
+
+
+/* ============================================================
+   14. EMPLOYEE ACTION BUTTONS
+   ============================================================ */
+
+td button {
+  border: 1px solid #e2e8f0 !important;
+
+  border-radius: 8px !important;
+
+  background: #ffffff !important;
+
+  color: #334155;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+td button:hover {
+  transform: translateY(-2px);
+
+  border-color: #c7d2fe !important;
+
+  color: #4f46e5;
+
+  box-shadow:
+    0 5px 12px rgba(15, 23, 42, 0.08);
+}
+
+td button:first-child:hover {
+  color: #dc2626;
+
+  border-color: #fecaca !important;
+
+  background: #fffafa !important;
+}
+
+
+/* ============================================================
+   15. FORM PAGES
+   ============================================================ */
+
+.form-page {
+  background:
+    radial-gradient(
+      circle at 8% 8%,
+      rgba(99, 102, 241, 0.10),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 92% 90%,
+      rgba(139, 92, 246, 0.08),
+      transparent 27%
+    );
+}
+
+.form-card {
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fbfcff
+    ) !important;
+
+  box-shadow:
+    0 15px 45px rgba(15, 23, 42, 0.08),
+    0 30px 70px rgba(79, 70, 229, 0.05) !important;
+}
+
+.form-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4338ca,
+      #6366f1,
+      #8b5cf6
+    );
+}
+
+.form-icon {
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #ddd6fe
+    ) !important;
+
+  box-shadow:
+    0 8px 20px rgba(79, 70, 229, 0.12);
+}
+
+
+/* ============================================================
+   16. PROFILE / EMPLOYEE DETAILS
+   ============================================================ */
+
+.profile-card,
+.details-card {
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fafbff
+    ) !important;
+}
+
+.profile-avatar,
+.details-avatar {
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #ddd6fe
+    ) !important;
+
+  box-shadow:
+    0 10px 25px rgba(79, 70, 229, 0.13);
+}
+
+
+/* ============================================================
+   17. DEPARTMENT BADGES
+   ============================================================ */
+
+.department-badge {
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #e0e7ff
+    ) !important;
+
+  color: #4338ca !important;
+
+  box-shadow:
+    0 3px 8px rgba(79, 70, 229, 0.07);
+}
+
+
+/* ============================================================
+   18. MICRO ANIMATION FOR PAGE CONTENT
+   ============================================================ */
+
+.dashboard-page,
+.form-page,
+.profile-page,
+.employee-details-page {
+  animation: pageEntrance 0.45s ease-out both;
+}
+
+@keyframes pageEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ============================================================
+   19. DISABLED FIELDS
+   ============================================================ */
+
+input:disabled {
+  background:
+    linear-gradient(
+      135deg,
+      #f8fafc,
+      #f1f5f9
+    ) !important;
+
+  color: #64748b !important;
+
+  border-color: #e2e8f0 !important;
+}
+
+
+/* ============================================================
+   20. SCROLLBAR — SMALL DETAIL, BIG DIFFERENCE
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #c7d2fe,
+      #818cf8
+    );
+
+  border: 2px solid #f8fafc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      180deg,
+      #a5b4fc,
+      #6366f1
+    );
+}
+
+
+
+/* =========================================================
+   LOGIN / REGISTER — BACKGROUND DEPTH
+   Add only — keep existing CSS
+   ========================================================= */
+
+.auth-page {
+  position: relative;
+  overflow: hidden;
+
+  background: #f8fafc;
+}
+
+/* Soft architectural background pattern */
+.auth-page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(99, 102, 241, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(99, 102, 241, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 90%
+  );
+
+  pointer-events: none;
+}
+
+/* Large soft background shapes */
+.auth-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(99, 102, 241, 0.06);
+
+  box-shadow:
+    0 0 0 80px rgba(99, 102, 241, 0.018),
+    0 0 0 160px rgba(99, 102, 241, 0.012);
+
+  pointer-events: none;
+}
+
+/* Keep the login/register card above the decoration */
+.auth-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* Subtle floating depth behind the card */
+.auth-card::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: -1;
+
+  inset: 18px -18px -18px 18px;
+
+  border-radius: inherit;
+
+  background: rgba(99, 102, 241, 0.035);
+
+  filter: blur(18px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   EMPLOYEEHUB HOME PAGE
+   ========================================================= */
+
+.home-page {
+  min-height: calc(100vh - 72px);
+  padding: 70px 24px 80px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(99, 102, 241, 0.10),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(139, 92, 246, 0.08),
+      transparent 28%
+    ),
+    #f8fafc;
+}
+
+.home-hero {
+  max-width: 1150px;
+  margin: 0 auto;
+
+  min-height: 480px;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.home-badge {
+  display: inline-block;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #eef2ff;
+  color: #4f46e5;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.home-content h1 {
+  margin: 20px 0 18px;
+
+  color: #111827;
+
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+}
+
+.home-content h1 span {
+  color: #4f46e5;
+}
+
+.home-content p {
+  max-width: 540px;
+
+  color: #64748b;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.home-actions {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.home-actions button {
+  min-width: 125px;
+}
+
+/* Product preview */
+
+.home-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.home-dashboard-card {
+  width: 100%;
+  max-width: 430px;
+
+  padding: 25px;
+
+  border: 1px solid #e0e7ff;
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f5f7ff
+    );
+
+  box-shadow:
+    0 25px 60px rgba(79, 70, 229, 0.12),
+    0 8px 25px rgba(15, 23, 42, 0.06);
+
+  transform: rotate(1deg);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.home-dashboard-card:hover {
+  transform: rotate(0deg) translateY(-6px);
+
+  box-shadow:
+    0 30px 70px rgba(79, 70, 229, 0.16);
+}
+
+.mini-card-header {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  color: #111827;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  border-bottom: 1px solid #edf0f6;
+}
+
+.mini-status {
+  color: #16a34a;
+  font-size: 11px;
+}
+
+.mini-stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.mini-stat {
+  padding: 16px;
+
+  border-radius: 12px;
+
+  background: #f5f7ff;
+}
+
+.mini-stat span {
+  display: block;
+
+  color: #64748b;
+  font-size: 11px;
+}
+
+.mini-stat strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #312e81;
+  font-size: 25px;
+}
+
+.mini-chart {
+  height: 100px;
+
+  display: flex;
+  align-items: end;
+  gap: 10px;
+
+  margin: 25px 0;
+
+  padding: 15px;
+
+  border-radius: 14px;
+
+  background: #eef2ff;
+}
+
+.mini-chart div {
+  flex: 1;
+
+  border-radius: 5px 5px 2px 2px;
+
+  background:
+    linear-gradient(
+      to top,
+      #4f46e5,
+      #818cf8
+    );
+}
+
+.mini-chart div:nth-child(1) {
+  height: 35%;
+}
+
+.mini-chart div:nth-child(2) {
+  height: 55%;
+}
+
+.mini-chart div:nth-child(3) {
+  height: 45%;
+}
+
+.mini-chart div:nth-child(4) {
+  height: 75%;
+}
+
+.mini-chart div:nth-child(5) {
+  height: 62%;
+}
+
+.mini-chart div:nth-child(6) {
+  height: 88%;
+}
+
+.mini-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mini-list > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px;
+
+  color: #475569;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  border-radius: 9px;
+
+  background: #fafbff;
+}
+
+.mini-avatar {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #e0e7ff;
+  color: #4f46e5;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* Features */
+
+.home-features {
+  max-width: 1150px;
+
+  margin: 40px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.feature-card {
+  padding: 26px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #c7d2fe;
+
+  box-shadow:
+    0 15px 35px rgba(79, 70, 229, 0.08);
+}
+
+.feature-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 10px;
+
+  background: #eef2ff;
+  color: #4f46e5;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.feature-card h3 {
+  margin-bottom: 8px;
+
+  color: #111827;
+
+  font-size: 16px;
+}
+
+.feature-card p {
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+
+  .home-page {
+    padding: 45px 18px 60px;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .home-content {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .home-content p {
+    margin: 0 auto;
+  }
+
+  .home-actions {
+    justify-content: center;
+  }
+
+  .home-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-dashboard-card {
+  transform: none !important;
+  animation: none !important;
+}
+
+.home-dashboard-card:hover {
+  transform: translateY(-4px) !important;
 }
