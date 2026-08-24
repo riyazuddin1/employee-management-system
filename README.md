@@ -2,45 +2,82 @@
 
 ## Employee Management Platform
 
-EmployeeHub is a full-stack Employee Management application built using **React, Spring Boot, and MySQL**.
+> 🚀 **Live Production Application:**  
+> **https://employee-management-system-5zlefxk82.vercel.app**
 
-It provides a professional web interface for managing employee records with authentication, CRUD operations, validation, profile management, protected routes, and responsive UI styling.
+EmployeeHub is a full-stack Employee Management Platform built with **React, Vite, Spring Boot, Java, Spring Data JPA, Hibernate, and MySQL**.
+
+The application provides a professional web interface for user authentication and complete employee record management through CRUD operations. It includes protected routes, validation, profile management, responsive UI, REST API integration, CORS configuration, cloud deployment, and persistent MySQL database storage.
 
 ---
 
-## 📌 Project Overview
+## 🌐 Live Application
+
+### Production Frontend
+
+**EmployeeHub:**  
+https://employee-management-system-5zlefxk82.vercel.app
+
+### Production Backend
+
+**Spring Boot API:**  
+https://employee-management-backend-o65d.onrender.com
+
+### Source Code
+
+**GitHub Repository:**  
+https://github.com/riyazuddin1/employee-management-system
+
+---
+
+# 📌 Project Overview
 
 EmployeeHub is designed to provide a centralized platform for managing employee information.
 
-The application allows authenticated users to:
+The application supports:
 
-- Register an account
-- Log in securely
-- View the employee dashboard
-- Add employees
-- View employee details
+- User registration
+- User login
+- Authentication state management
+- Protected routes
+- Employee dashboard
+- Add employee
+- View all employees
+- View individual employee details
 - Update employee information
 - Delete employees
-- Manage their profile
-- Log out of the application
+- User profile management
+- Logout functionality
+- Form validation
+- Duplicate employee ID protection
+- Responsive user interface
+- REST API communication
+- Cloud deployment
 
-The system also includes backend validation and duplicate employee ID protection to prevent an existing employee record from being accidentally overwritten.
+The system uses a **React frontend**, **Spring Boot REST backend**, and **MySQL database** connected through JPA/Hibernate.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-### 🏠 Home / Landing Page
+## 🏠 Home / Landing Page
 
-- Professional EmployeeHub landing page
-- Application overview
-- Feature highlights
-- Get Started button
-- Sign In button
+- Professional EmployeeHub branding
+- Application introduction
+- Feature overview
+- Get Started action
+- Sign In action
 - Product-style dashboard preview
-- Responsive layout
+- Responsive design
+- Publicly accessible landing page
 
-### 🔐 Authentication
+---
+
+## 🔐 Authentication
+
+EmployeeHub provides a complete authentication flow.
+
+### Features
 
 - User registration
 - Username uniqueness validation
@@ -48,40 +85,95 @@ The system also includes backend validation and duplicate employee ID protection
 - Invalid login handling
 - Login success notifications
 - Registration success notifications
-- Persistent authentication state using browser local storage
+- Authentication state management
+- Browser local-storage based authentication state
 - Protected routes
 - Logout functionality
+- Automatic navigation after login
+- Automatic navigation after logout
 
-### 👥 Employee Management
+### Navigation Before Login
 
-- Add employee
-- View all employees
-- View individual employee details
-- Update employee information
-- Delete employee
-- Duplicate employee ID protection
-- Employee age validation
-- Required field validation
+```text
+EmployeeHub
+│
+├── Home
+├── Login
+└── Register
+````
 
-### 👤 Profile
+### Navigation After Login
 
-- Protected profile page
-- Displays logged-in user information
-- Accessible only after authentication
+```text
+EmployeeHub
+│
+├── Dashboard
+├── Add Employee
+├── Profile
+└── Logout
+```
 
-### 🎨 User Interface
+---
 
-- Professional EmployeeHub branding
-- Responsive navigation bar
-- Dashboard interface
-- Modern forms
-- Interactive buttons
-- Toast notifications
-- Responsive layouts
-- Hover effects
-- Card-based UI
-- Form validation feedback
-- Mobile-friendly styling
+# 👥 Employee Management
+
+EmployeeHub provides complete employee CRUD functionality.
+
+### Create
+
+* Add new employee
+* Employee ID validation
+* Employee name validation
+* Employee age validation
+* Department validation
+* Duplicate employee ID protection
+
+### Read
+
+* View all employees
+* View individual employee details
+* Display employee information in the dashboard
+
+### Update
+
+* Update existing employee information
+* Employee ID remains protected while editing
+* Form validation before submission
+
+### Delete
+
+* Delete an employee by ID
+* Refresh employee information after deletion
+* Database record removal
+
+---
+
+# 👤 Profile Management
+
+* Protected profile page
+* Displays logged-in user information
+* Accessible only after authentication
+* Consistent EmployeeHub UI
+
+---
+
+# 🎨 User Interface
+
+The application provides a clean and responsive interface.
+
+### UI Features
+
+* EmployeeHub branding
+* Responsive navigation bar
+* Modern dashboard
+* Card-based UI
+* Modern forms
+* Interactive buttons
+* Toast notifications
+* Validation feedback
+* Hover effects
+* Responsive layouts
+* Mobile-friendly styling
 
 ---
 
@@ -89,56 +181,87 @@ The system also includes backend validation and duplicate employee ID protection
 
 ## Frontend
 
-- React
-- Vite
-- JavaScript
-- React Router DOM
-- Axios
-- React Toastify
-- CSS3
+* React
+* Vite
+* JavaScript
+* React Router DOM
+* Axios
+* React Toastify
+* CSS3
 
 ## Backend
 
-- Java
-- Spring Boot
-- Spring Web
-- Spring Data JPA
-- Hibernate
-- Jakarta Validation
-- Maven
+* Java 21
+* Spring Boot
+* Spring Web / MVC
+* Spring Data JPA
+* Hibernate
+* Jakarta Validation
+* Maven
+* Apache Tomcat
 
 ## Database
 
-- MySQL
-- MySQL Connector/J
+* MySQL
+* MySQL Connector/J
+* JPA/Hibernate persistence
+
+## Deployment
+
+* Vercel — React frontend
+* Render — Spring Boot backend
+* Aiven — Cloud MySQL database
+* Docker — Backend containerization
+* GitHub — Source code and version control
 
 ## Development Tools
 
-- Visual Studio Code
-- IntelliJ IDEA / Eclipse
-- MySQL Workbench
-- Git
-- GitHub
+* Visual Studio Code
+* Git
+* GitHub
+* MySQL / MySQL Workbench
 
 ---
 
 # 🏗️ Application Architecture
 
 ```text
-                    EmployeeHub
-                         │
-          ┌──────────────┴──────────────┐
-          │                             │
-      Frontend                      Backend
-       React                       Spring Boot
-          │                             │
-       Axios                         REST API
-          │                             │
-          └──────────────┬──────────────┘
-                         │
-                       MySQL
-                      Database
+                         EmployeeHub
+                              │
+              ┌───────────────┴───────────────┐
+              │                               │
+          Frontend                         Backend
+          React + Vite                  Spring Boot
+              │                               │
+           Vercel                         Render
+              │                               │
+            Axios                         REST API
+              │                               │
+              └───────────────┬───────────────┘
+                              │
+                         Aiven MySQL
+                              │
+                         Database
+```
 
+---
+
+# 🔄 Production Request Flow
+
+```text
+User Browser
+     │
+     ▼
+Vercel React Frontend
+     │
+     │ HTTPS REST API requests
+     ▼
+Render Spring Boot Backend
+     │
+     │ JPA / Hibernate
+     ▼
+Aiven MySQL Database
+```
 
 ---
 
@@ -157,6 +280,9 @@ complete_crud_spring_react_mysql/
 │       │   │   ├── java/
 │       │   │   │   └── employee_management_system/
 │       │   │   │       │
+│       │   │   │       ├── config/
+│       │   │   │       │   └── CorsConfig.java
+│       │   │   │       │
 │       │   │   │       ├── controller/
 │       │   │   │       │   ├── EmployeeController.java
 │       │   │   │       │   └── UserController.java
@@ -169,17 +295,22 @@ complete_crud_spring_react_mysql/
 │       │   │   │       │   ├── EmployeeRepository.java
 │       │   │   │       │   └── UserRepository.java
 │       │   │   │       │
-│       │   │   │       └── service/
-│       │   │   │           ├── EmployeeService.java
-│       │   │   │           └── UserService.java
+│       │   │   │       ├── service/
+│       │   │   │       │   ├── EmployeeService.java
+│       │   │   │       │   └── UserService.java
+│       │   │   │       │
+│       │   │   │       └── EmployeeManagementSystemApplication.java
 │       │   │   │
 │       │   │   └── resources/
+│       │   │       ├── application.properties
 │       │   │       └── application-example.properties
 │       │   │
 │       │   └── test/
 │       │
 │       ├── pom.xml
-│       └── mvnw.cmd
+│       ├── mvnw
+│       ├── mvnw.cmd
+│       └── Dockerfile
 │
 ├── src/
 │   │
@@ -208,73 +339,96 @@ complete_crud_spring_react_mysql/
 │   ├── index.css
 │   └── main.jsx
 │
+├── public/
+│
 ├── index.html
 ├── package.json
+├── vite.config.js
+├── vercel.json
 ├── .gitignore
 └── README.md
+```
 
-🔄 Application Flow
+> **Note:** Environment files containing credentials or deployment configuration are intentionally excluded from Git.
 
-                    Home Page
-                       │
-             ┌─────────┴─────────┐
-             │                   │
-          Register              Login
-             │                   │
-             └─────────┬─────────┘
-                       │
-                 Authentication
-                       │
-                       ▼
-                   Dashboard
-                       │
-           ┌────────────┼────────────┐
-           │            │            │
-           ▼            ▼            ▼
-         Add          View/Edit     Profile
-       Employee       Employee
-           │            │
-           └────────────┼────────────┘
-                       │
-                       ▼
-                  MySQL Database
+---
 
-🧭 Navigation
+# 🔄 Application Flow
 
-Before Login
+```text
+                         Home Page
+                             │
+                 ┌───────────┴───────────┐
+                 │                       │
+              Register                  Login
+                 │                       │
+                 └───────────┬───────────┘
+                             │
+                      Authentication
+                             │
+                             ▼
+                         Dashboard
+                             │
+              ┌──────────────┼──────────────┐
+              │              │              │
+              ▼              ▼              ▼
+          Add Employee    View/Edit       Profile
+              │            Employee          │
+              │              │              │
+              └──────────────┼──────────────┘
+                             │
+                             ▼
+                       MySQL Database
+```
+
+---
+
+# 🧭 Navigation
+
+## Before Login
+
+```text
 EmployeeHub
 │
 ├── Home
 ├── Login
 └── Register
+```
 
-After Login
+## After Login
+
+```text
 EmployeeHub
 │
 ├── Dashboard
 ├── Add Employee
 ├── Profile
 └── Logout
+```
 
-Protected pages are not accessible without authentication.
+Protected pages are inaccessible without authentication.
 
+---
 
-🔐 Authentication Flow
-User opens the EmployeeHub Home page.
-User can navigate to Login or Register.
-New users can create an account.
-The backend checks whether the username already exists.
-Registered users can log in.
-Successful login updates the authentication state.
-Protected routes become accessible.
-The user can access employee management features.
-Logout clears the authentication state.
-The user is redirected to the Login page.
+# 🔐 Authentication Flow
 
+1. User opens the EmployeeHub Home page.
+2. User can navigate to Login or Register.
+3. New users can create an account.
+4. Backend checks whether the username already exists.
+5. Registered users can log in.
+6. Successful login updates the authentication state.
+7. User is redirected to the Employee Dashboard.
+8. Protected routes become accessible.
+9. User can access employee management features.
+10. Logout clears the authentication state.
+11. User is redirected to the Login page.
+
+---
 
 # 👨‍💼 Employee CRUD Operations
 
-EmployeeHub provides complete CRUD functionality for managing employee records.
+EmployeeHub provides complete CRUD functionality through REST APIs.
 
 ---
 
@@ -284,7 +438,7 @@ EmployeeHub provides complete CRUD functionality for managing employee records.
 
 ```text
 POST /addEmployee
-````
+```
 
 Creates a new employee record in the database.
 
@@ -331,7 +485,7 @@ PUT /updateEmployee
 
 Updates the information of an existing employee.
 
-The Employee ID is read-only while editing so that the primary key cannot accidentally be changed.
+The Employee ID remains read-only while editing so that the primary key cannot accidentally be changed.
 
 ---
 
@@ -349,7 +503,7 @@ Deletes the selected employee from the database.
 
 # 🛡️ Validation
 
-EmployeeHub uses **Jakarta Validation** on the backend to validate employee information before processing requests.
+EmployeeHub uses backend validation to validate employee information before processing requests.
 
 ---
 
@@ -385,6 +539,7 @@ If a user attempts to add an employee using an existing employee ID, the applica
 
 ```text
 Employee ID 101 already exists.
+
 Please use a different ID.
 ```
 
@@ -394,25 +549,7 @@ Please use a different ID.
 
 EmployeeHub uses **MySQL** for persistent data storage.
 
----
-
-## Database Name
-
-```text
-excelr_employee_management
-```
-
----
-
-## Create Database
-
-Create the database using:
-
-```sql
-CREATE DATABASE excelr_employee_management;
-```
-
-Hibernate/JPA is responsible for creating and updating the required database tables.
+The production application uses a cloud-hosted MySQL database.
 
 ---
 
@@ -427,17 +564,82 @@ users
 
 ---
 
-# ⚙️ Local Database Configuration
+## Employee Table
 
-Create the following file locally:
+The employee data includes:
+
+```text
+id
+name
+age
+dept
+```
+
+The employee ID is used as the primary key and employee age is validated to be at least 18.
+
+---
+
+## User Table
+
+The user data includes:
+
+```text
+id
+first_name
+last_name
+username
+password
+```
+
+---
+
+# ⚙️ Environment Configuration
+
+Sensitive configuration values should not be committed to GitHub.
+
+The project uses environment-specific configuration for the deployed frontend and backend.
+
+---
+
+## Frontend Environment Variable
+
+For local frontend development, create:
+
+```text
+.env
+```
+
+in the **frontend project root**, alongside `package.json`.
+
+Example:
+
+```env
+VITE_API_URL=http://localhost:8085
+```
+
+For the deployed production frontend, configure the Vercel environment variable:
+
+```text
+VITE_API_URL=https://employee-management-backend-o65d.onrender.com
+```
+
+The Axios client reads the value through:
+
+```javascript
+import.meta.env.VITE_API_URL
+```
+
+---
+
+## Backend Configuration
+
+For local development, create:
 
 ```text
 backend/employee-management-system/src/main/resources/application.properties
 ```
 
----
-
-## Example Configuration
+Example:
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/excelr_employee_management
@@ -450,25 +652,110 @@ spring.jpa.show-sql=true
 server.port=8085
 ```
 
+For production deployment, database credentials and other sensitive values should be configured through the deployment platform's environment variables rather than committed to GitHub.
+
 ---
 
-## ⚠️ Database Security
+# 🔒 Configuration Security
 
-The actual `application.properties` file is intentionally excluded from GitHub because it contains local database credentials.
-
-The repository contains:
+The following files should not be committed when they contain sensitive credentials:
 
 ```text
-application-example.properties
+.env
+application.properties
 ```
 
-which can be used as a configuration reference.
+The repository uses `.gitignore` to prevent sensitive local configuration from being accidentally committed.
+
+Use environment variables for:
+
+* Database credentials
+* API configuration
+* Production secrets
+* Deployment-specific configuration
+
+---
+
+# 🐳 Docker Deployment
+
+The Spring Boot backend is containerized using Docker for deployment on Render.
+
+The backend contains:
+
+```text
+backend/employee-management-system/Dockerfile
+```
+
+The Docker build performs the following stages:
+
+```text
+Maven Build
+     │
+     ▼
+Spring Boot JAR
+     │
+     ▼
+Eclipse Temurin Java Runtime
+     │
+     ▼
+Docker Container
+     │
+     ▼
+Render
+```
+
+The backend listens on the port provided by the deployment environment.
+
+---
+
+# ☁️ Deployment Architecture
+
+## Frontend — Vercel
+
+The React/Vite frontend is deployed on Vercel.
+
+### Production URL
+
+```text
+https://employee-management-system-5zlefxk82.vercel.app
+```
+
+---
+
+## Backend — Render
+
+The Spring Boot backend is deployed as a Docker-based web service on Render.
+
+### Backend URL
+
+```text
+https://employee-management-backend-o65d.onrender.com
+```
+
+---
+
+## Database — Aiven
+
+The production backend connects to a cloud-hosted MySQL database through Aiven.
+
+The database connection is configured using environment-specific credentials.
+
+---
+
+# 🔗 Production URLs
+
+| Component   | Platform    | URL                                                                                                                    |
+| ----------- | ----------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Frontend    | Vercel      | [https://employee-management-system-5zlefxk82.vercel.app](https://employee-management-system-5zlefxk82.vercel.app)     |
+| Backend     | Render      | [https://employee-management-backend-o65d.onrender.com](https://employee-management-backend-o65d.onrender.com)         |
+| Source Code | GitHub      | [https://github.com/riyazuddin1/employee-management-system](https://github.com/riyazuddin1/employee-management-system) |
+| Database    | Aiven MySQL | Cloud hosted                                                                                                           |
 
 ---
 
 # 🚀 Running the Application Locally
 
-Follow the steps below to run EmployeeHub on a local development environment.
+Follow the steps below to run EmployeeHub in a local development environment.
 
 ---
 
@@ -486,17 +773,17 @@ cd employee-management-system
 
 ---
 
-## 2️⃣ Configure MySQL
+# 2️⃣ Configure MySQL
 
 Make sure MySQL is installed and running.
 
-Create the EmployeeHub database:
+Create the local database:
 
 ```sql
 CREATE DATABASE excelr_employee_management;
 ```
 
-Then configure:
+Configure the backend:
 
 ```text
 backend/employee-management-system/src/main/resources/application.properties
@@ -506,7 +793,7 @@ with your local MySQL username and password.
 
 ---
 
-## 3️⃣ Start the Spring Boot Backend
+# 3️⃣ Start the Spring Boot Backend
 
 Open a terminal and navigate to:
 
@@ -514,43 +801,61 @@ Open a terminal and navigate to:
 cd backend/employee-management-system
 ```
 
-### Windows
+## Windows
 
 ```bash
 .\mvnw.cmd spring-boot:run
 ```
 
-### macOS / Linux
+## macOS / Linux
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-### Backend URL
+The default local backend runs on:
 
 ```text
-https://employee-management-backend-o65d.onrender.com
+http://localhost:8085
 ```
 
 ---
 
-## 4️⃣ Start the React Frontend
+# 4️⃣ Configure the React Frontend
 
-Open another terminal from the project root.
+From the frontend project root, create:
 
-Install the frontend dependencies:
+```text
+.env
+```
+
+Example:
+
+```env
+VITE_API_URL=http://localhost:8085
+```
+
+Do not commit this file if it contains environment-specific configuration.
+
+---
+
+# 5️⃣ Install Frontend Dependencies
+
+From the project root:
 
 ```bash
 npm install
 ```
 
-Start the development server:
+---
+
+# 6️⃣ Start the React Frontend
 
 ```bash
 npm run dev
 ```
 
-### Frontend URL
+The Vite development server will normally be available at:
 
 ```text
 http://localhost:5173
@@ -560,9 +865,82 @@ Open the displayed URL in your browser.
 
 ---
 
+# 🔄 Frontend API Configuration
+
+The application uses a centralized Axios instance.
+
+```javascript
+import axios from "axios";
+
+const axiosInstance = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+export default axiosInstance;
+```
+
+This allows the same frontend codebase to work with:
+
+```text
+Local Backend
+http://localhost:8085
+```
+
+and:
+
+```text
+Production Backend
+https://employee-management-backend-o65d.onrender.com
+```
+
+depending on the configured environment variable.
+
+---
+
+# 🌐 React Router and Vercel
+
+EmployeeHub uses React Router for client-side navigation.
+
+The project includes:
+
+```text
+vercel.json
+```
+
+to configure SPA rewrites.
+
+Configuration:
+
+```json
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+```
+
+This ensures routes such as:
+
+```text
+/login
+/register
+/viewEmp
+/profile
+```
+
+continue to work correctly when directly opened or refreshed in the browser.
+
+---
+
 # 🧪 Tested Functionality
 
-The following application workflows have been successfully tested.
+The following workflows have been successfully tested in the deployed application.
 
 ---
 
@@ -577,6 +955,7 @@ The following application workflows have been successfully tested.
 * Protected routes
 * Logout
 * Redirect after logout
+* Production authentication against the cloud database
 
 ---
 
@@ -589,6 +968,7 @@ The following application workflows have been successfully tested.
 * View employee
 * Update employee
 * Delete employee
+* Production CRUD operations
 
 ---
 
@@ -604,7 +984,12 @@ The following application workflows have been successfully tested.
 
 * Frontend/backend communication
 * REST API communication
+* CORS configuration
 * MySQL database persistence
+* Vercel-to-Render communication
+* Render-to-Aiven database communication
+* Production login
+* Production CRUD
 
 ---
 
@@ -634,7 +1019,8 @@ The application provides dedicated pages for:
 * Login
 * Authentication feedback
 * Form validation
-* Success and error notifications
+* Success notifications
+* Error notifications
 
 ---
 
@@ -656,7 +1042,9 @@ The dashboard provides:
 Employee forms provide:
 
 * Structured input fields
-* Validation
+* Required-field validation
+* Age validation
+* Duplicate ID protection
 * User-friendly controls
 * Success notifications
 * Error notifications
@@ -686,23 +1074,24 @@ The interface is designed to work across:
 
 # 🔒 Security Considerations
 
-The current authentication implementation is suitable for an internship/final project demonstration.
+The current authentication implementation is suitable for an internship/final-project demonstration.
 
-For a production environment, the authentication system can be further strengthened with the following technologies and practices.
+For a larger production system, authentication and authorization can be further strengthened.
 
----
-
-## 🔐 Recommended Production Improvements
+Recommended improvements include:
 
 * Spring Security
 * Password hashing
-* JWT authentication
+* JWT-based authentication
 * Role-based authorization
+* Secure session management
 * Environment variables
 * Secret management
 * HTTPS
 * Secure production database configuration
-* Production CORS configuration
+* Strict production CORS configuration
+* Input sanitization
+* API rate limiting
 
 ---
 
@@ -710,7 +1099,7 @@ For a production environment, the authentication system can be further strengthe
 
 Screenshots can be added to document the application's major screens.
 
----
+Recommended sections include:
 
 ## 🏠 Home Page
 
@@ -760,28 +1149,26 @@ Screenshots can be added to document the application's major screens.
 
 ---
 
-# 🌐 Deployment
+# 🚀 Deployment Status
 
-The application is currently configured and tested in a local development environment.
-
----
-
-## Current Deployment Status
-
-| Component           | Status                          |
-| ------------------- | ------------------------------- |
-| React Frontend      | To be deployed                  |
-| Spring Boot Backend | To be deployed                  |
-| MySQL Database      | To be configured for production |
-| Live Demo           | Coming soon                     |
-
-Live URLs will be added to this section after deployment.
+| Component           | Platform    | Status       |
+| ------------------- | ----------- | ------------ |
+| React Frontend      | Vercel      | ✅ Live       |
+| Spring Boot Backend | Render      | ✅ Live       |
+| MySQL Database      | Aiven       | ✅ Connected  |
+| Docker Backend      | Render      | ✅ Deployed   |
+| REST API            | Render      | ✅ Working    |
+| CORS                | Spring Boot | ✅ Configured |
+| React SPA Routing   | Vercel      | ✅ Configured |
+| Authentication      | Production  | ✅ Tested     |
+| Employee CRUD       | Production  | ✅ Tested     |
+| Live Demo           | Vercel      | ✅ Available  |
 
 ---
 
 # 🔮 Future Enhancements
 
-The following improvements can be added in future versions of EmployeeHub.
+The following improvements can be considered for future versions of EmployeeHub.
 
 ---
 
@@ -789,8 +1176,11 @@ The following improvements can be added in future versions of EmployeeHub.
 
 * Spring Security
 * JWT authentication
-* Password encryption
+* Password hashing
 * Role-based access control
+* Admin/user roles
+* Forgot password functionality
+* Email verification
 
 ---
 
@@ -799,7 +1189,10 @@ The following improvements can be added in future versions of EmployeeHub.
 * Employee search
 * Department filtering
 * Pagination
+* Advanced sorting
 * Employee profile pictures
+* Employee status management
+* Bulk employee operations
 
 ---
 
@@ -808,6 +1201,8 @@ The following improvements can be added in future versions of EmployeeHub.
 * Dashboard analytics
 * Employee statistics
 * Department statistics
+* Charts and graphs
+* Employee growth trends
 * Visual reports
 
 ---
@@ -816,16 +1211,20 @@ The following improvements can be added in future versions of EmployeeHub.
 
 * Export employee records
 * Import employee records
+* CSV export
+* Excel export
 * Automated reports
 
 ---
 
 ## ☁️ Deployment & DevOps
 
-* Cloud deployment
-* Automated testing
 * CI/CD pipeline
+* Automated testing
 * Production monitoring
+* Application health monitoring
+* Logging and observability
+* Automated database backups
 
 ---
 
@@ -851,7 +1250,7 @@ The following improvements can be added in future versions of EmployeeHub.
 
 # 📌 Project Highlights
 
-EmployeeHub demonstrates practical full-stack development using the following technologies and concepts.
+EmployeeHub demonstrates practical full-stack development using modern web technologies and cloud deployment.
 
 ---
 
@@ -865,12 +1264,14 @@ EmployeeHub demonstrates practical full-stack development using the following te
 * React Toastify
 * CSS3
 * Responsive UI design
+* Client-side routing
+* Environment-based API configuration
 
 ---
 
 ## Backend Development
 
-* Java
+* Java 21
 * Spring Boot
 * Spring Web
 * REST APIs
@@ -878,6 +1279,7 @@ EmployeeHub demonstrates practical full-stack development using the following te
 * Hibernate
 * Jakarta Validation
 * Maven
+* Docker
 
 ---
 
@@ -886,6 +1288,20 @@ EmployeeHub demonstrates practical full-stack development using the following te
 * MySQL
 * Relational data management
 * JPA/Hibernate persistence
+* Cloud database deployment
+
+---
+
+## Cloud & Deployment
+
+* Vercel
+* Render
+* Aiven
+* Docker
+* GitHub
+* Production environment configuration
+* CORS configuration
+* SPA routing configuration
 
 ---
 
@@ -899,6 +1315,8 @@ EmployeeHub demonstrates practical full-stack development using the following te
 * API integration
 * Toast notifications
 * Responsive design
+* Profile management
+* Production deployment
 
 ---
 
@@ -907,10 +1325,24 @@ EmployeeHub demonstrates practical full-stack development using the following te
 * Git
 * GitHub
 * Git-based project versioning
+* Branch-based development
+* Automated deployment through Git-connected platforms
 
 ---
 
 # 📄 License
 
-This project was developed as an internship/final project for educational, demonstration, and portfolio purposes.
+This project was developed as an internship/final project for educational, demonstration, learning, and portfolio purposes.
 
+---
+
+# ⭐ EmployeeHub
+
+**A full-stack Employee Management Platform built with React + Spring Boot + MySQL and deployed using Vercel, Render, Docker, and Aiven.**
+
+### 🚀 Live Demo
+
+**[https://employee-management-system-5zlefxk82.vercel.app](https://employee-management-system-5zlefxk82.vercel.app)**
+
+```
+```
