@@ -5,7 +5,6 @@ import { useAuth } from "../service/AuthContext";
 import { toast } from "react-toastify";
 
 const Login = () => {
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -14,48 +13,35 @@ const Login = () => {
   const { login } = useAuth();
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
 
     if (!username.trim() || !password) {
-      toast.error(
-        "Please enter your username and password."
-      );
+      toast.error("Please enter your username and password.");
       return;
     }
 
     try {
-
       setLoading(true);
 
-      const response = await axiosInstance.post(
-        "https://employee-management-backend-o65d.onrender.com/login",
-        {
-          username: username.trim(),
-          password,
-        }
-      );
+      const response = await axiosInstance.post("/login", {
+        username: username.trim(),
+        password,
+      });
 
       if (response.status === 200) {
-
         login(username.trim());
 
-        toast.success(
-          "Login successful! Welcome back."
-        );
+        toast.success("Login successful! Welcome back.");
 
         setTimeout(() => {
-          navigate("/");
+          navigate("/viewEmp");
         }, 700);
       }
-
     } catch (error) {
-
       toast.error(
         error.response?.data?.message ||
-        "Invalid username or password."
+          "Invalid username or password."
       );
-
     } finally {
       setLoading(false);
     }
@@ -63,14 +49,9 @@ const Login = () => {
 
   return (
     <main className="auth-page">
-
       <div className="auth-card">
-
         <div className="auth-brand">
-
-          <div className="auth-logo">
-            EH
-          </div>
+          <div className="auth-logo">EH</div>
 
           <div>
             <h1>Welcome back</h1>
@@ -79,16 +60,13 @@ const Login = () => {
               Sign in to your EmployeeHub account
             </p>
           </div>
-
         </div>
 
         <form
           onSubmit={handleSubmit}
           className="auth-form"
         >
-
           <div className="form-group">
-
             <label htmlFor="username">
               Username
             </label>
@@ -103,11 +81,9 @@ const Login = () => {
               }
               autoComplete="username"
             />
-
           </div>
 
           <div className="form-group">
-
             <label htmlFor="password">
               Password
             </label>
@@ -122,7 +98,6 @@ const Login = () => {
               }
               autoComplete="current-password"
             />
-
           </div>
 
           <button
@@ -134,11 +109,9 @@ const Login = () => {
               ? "Signing in..."
               : "Sign In"}
           </button>
-
         </form>
 
         <p className="auth-footer">
-
           Don't have an account?{" "}
 
           <button
@@ -150,11 +123,8 @@ const Login = () => {
           >
             Create an account
           </button>
-
         </p>
-
       </div>
-
     </main>
   );
 };

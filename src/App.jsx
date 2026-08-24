@@ -1,6 +1,6 @@
 import React from "react";
 import NavbarComp from "./components/NavbarComp";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ViewEmployee from "./pages/ViewEmployee";
 import AddEmployee from "./pages/AddEmployee";
 import UpdateEmployee from "./pages/UpdateEmployee";
@@ -8,10 +8,20 @@ import { ToastContainer } from "react-toastify";
 import ViewIndividualEmp from "./pages/ViewIndividualEmp";
 import Registration from "./auth/Registration";
 import Login from "./auth/Login";
-import { AuthProvider } from "./service/AuthContext";
+import { AuthProvider, useAuth } from "./service/AuthContext";
 import ProtectedRoutes from "./service/ProtectedRoutes";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
+
+const RootRoute = () => {
+  const { isAuthenticated } = useAuth();
+
+  if (isAuthenticated) {
+    return <Navigate to="/viewEmp" replace />;
+  }
+
+  return <Home />;
+};
 
 const App = () => {
   return (
@@ -21,7 +31,7 @@ const App = () => {
         <NavbarComp />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<RootRoute />} />
 
           <Route path="/home" element={<Home />} />
 
