@@ -34,3 +34,6 @@ build/
 
 # Spring Boot local configuration
 backend/employee-management-system/src/main/resources/application.properties
+
+# Environment variables
+.env
