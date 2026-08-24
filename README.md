@@ -271,11 +271,7 @@ The user can access employee management features.
 Logout clears the authentication state.
 The user is redirected to the Login page.
 
-Absolutely. From **`# 👨‍💼 Employee CRUD Operations` onward**, replace everything in your README with the complete block below.
 
-I’ve made **every major topic a proper `#` section** and the related items `##` / `###`, so GitHub will render it cleanly section-by-section after you push.
-
-````markdown
 # 👨‍💼 Employee CRUD Operations
 
 EmployeeHub provides complete CRUD functionality for managing employee records.
